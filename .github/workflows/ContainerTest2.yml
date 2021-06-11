@@ -2,7 +2,8 @@ name: Test conditional parameter
 on: 
   release:
     types: [published]
-  [push, pull_request]
+  push:
+  pull_request:
 
 jobs:
   build:
