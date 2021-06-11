@@ -1,7 +1,7 @@
 name: Test conditional parameter
 on: 
   release:
-    types: [published]
+    types: [released]
   push:
   pull_request:
 
