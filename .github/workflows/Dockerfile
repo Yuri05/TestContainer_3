@@ -6,7 +6,7 @@ ENTRYPOINT ["sh"]
 RUN mkdir -p /tmp_setup 
 COPY .github/workflows/*.R /tmp_setup/
 COPY .github/workflows/*.sh /tmp_setup/
-RUN chmod ugo+x /tmp_setup/*.sh
+#RUN chmod ugo+x /tmp_setup/*.sh
 
 # Cleanup
 RUN rm -rf /tmp_setup
