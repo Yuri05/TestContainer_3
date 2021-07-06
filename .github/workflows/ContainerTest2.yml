@@ -28,6 +28,6 @@ jobs:
           file: .github/workflows/Dockerfile
           push: true # ${{ github.event_name == 'release' }}
           tags: |
-            ghcr.io/yuri05/test_3:v3.1.1
+            ghcr.io/yuri05/test_3:v4.2.2
             ghcr.io/yuri05/test_3:latest
 #           ghcr.io/yuri05/test_3:${{ steps.tag_name.outputs.SOURCE_TAG}}
