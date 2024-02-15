@@ -14,20 +14,22 @@ jobs:
         run: |
           echo ::set-output name=SOURCE_TAG::${GITHUB_REF##*/}
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: .github/workflows/Dockerfile
           push: true # ${{ github.event_name == 'release' }}
           tags: |
-            ghcr.io/yuri05/test_3:v4.2.2
-            ghcr.io/yuri05/test_3:latest
+            ghcr.io/yuri05/xxx:v1.2.3
+            ghcr.io/yuri05/xxx:latest
+#            ghcr.io/yuri05/test_3:v4.2.2
+#            ghcr.io/yuri05/test_3:latest
 #           ghcr.io/yuri05/test_3:${{ steps.tag_name.outputs.SOURCE_TAG}}
